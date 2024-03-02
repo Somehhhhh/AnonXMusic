@@ -25,7 +25,7 @@ from youtubesearchpython import SearchVideos
 def download_song(_, message):
     query = " ".join(message.command[1:])  
     print(query)
-    m = message.reply("**🔄 sᴇᴀʀᴄʜɪɴɢ... **")
+    m = message.reply(" sᴇᴀʀᴄʜɪɴɢ... ")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -45,7 +45,7 @@ def download_song(_, message):
         m.edit("**⚠️ ɴᴏ ʀᴇsᴜʟᴛs ᴡᴇʀᴇ ғᴏᴜɴᴅ. ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ᴛʏᴘᴇᴅ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ sᴏɴɢ ɴᴀᴍᴇ**")
         print(str(e))
         return
-    m.edit("**📥 ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...**")
+    m.edit(" ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -55,7 +55,7 @@ def download_song(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("**📤 ᴜᴘʟᴏᴀᴅɪɴɢ...**")
+        m.edit(" ᴜᴘʟᴏᴀᴅɪɴɢ...")
 
         message.reply_audio(
             audio_file,
