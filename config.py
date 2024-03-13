@@ -31,7 +31,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Mrselbi")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Friendsclub18")
 
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
